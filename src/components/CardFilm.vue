@@ -23,6 +23,14 @@ export default {
 
 <template>
   <div class="card">
+    <div class="contLocandina">
+      <div class="contImg">
+        <img
+          src="http://image.tmdb.org/t/p/original//jKKTTRdSEcVx9Y0jcSDYNqd72h9.jpg"
+          alt=""
+        />
+      </div>
+    </div>
     <div class="textContent">
       <h2>{{ titolo }}</h2>
       <h4>{{ titoloOrigin }}</h4>
@@ -47,14 +55,34 @@ h3 {
 .card {
   background-color: grey;
   height: 30rem;
-  width: calc((100% / 5) - 1.1rem);
-  padding: 1rem;
+  width: calc((100% / 5) - 0.2rem);
+  // padding: 1rem;
+  position: relative;
 
-  &:hover {
-    background-color: rgb(58, 58, 58);
+  &:hover .textContent {
+    display: block;
+  }
+  &:hover .contLocandina {
+    display: none;
+  }
+  .contLocandina {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .contImg {
+      width: 100%;
+      height: 100%;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
   .textContent {
     text-align: center;
+    display: none;
     h2 {
       padding: 1rem;
     }

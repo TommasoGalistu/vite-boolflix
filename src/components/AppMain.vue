@@ -18,6 +18,7 @@ export default {
     flagInsert(lingua) {
       let result;
       switch (lingua) {
+        // https://www.bandiere-mondo.it/italia/scarica/icone
         case "en":
           result = {
             src: "https://flagcdn.com/w40/um.png",
@@ -92,6 +93,7 @@ export default {
     .contFirstText {
       height: calc(100vh - 5rem);
     }
+
     .containerFigure {
       .containerCard {
         background-color: black;
