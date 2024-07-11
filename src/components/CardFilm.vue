@@ -28,7 +28,6 @@ export default {
       <div class="contImg">
         <img :src="`http://image.tmdb.org/t/p/original${src}`" alt="" />
       </div>
-      <h2>{{ titolo }}</h2>
     </div>
     <div class="textContent">
       <h2>{{ titolo }}</h2>
@@ -78,16 +77,6 @@ h3 {
         width: 100%;
         object-fit: cover;
       }
-    }
-    h2 {
-      position: absolute;
-      top: 70%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-      color: black; /* Text color */
-      -webkit-text-stroke: 1px white; /* Border effect */
-      text-align: center;
     }
   }
   .textContent {

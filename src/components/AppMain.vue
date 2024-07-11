@@ -60,7 +60,7 @@ export default {
             :titoloOrigin="film.original_title"
             :lingua="flagInsert(film.original_language)"
             :valutazione="film.vote_average"
-            :src="film.backdrop_path"
+            :src="film.poster_path"
           />
         </div>
         <h3>Serie Tv</h3>
