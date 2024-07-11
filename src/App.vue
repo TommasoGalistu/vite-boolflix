@@ -23,10 +23,10 @@ export default {
         let urlFilmModificato = store.urlRichiestaFilm;
         let urlSerieModificato = store.urlRichiestaSerie;
         // cambio i caratteri vuoti con il +
-        let inputModificato = store.inputUtente.split(" ").join("+");
+        // let inputModificato = store.inputUtente.split(" ").join("+");
 
-        urlFilmModificato += inputModificato;
-        urlSerieModificato += inputModificato;
+        urlFilmModificato += store.inputUtente;
+        urlSerieModificato += store.inputUtente;
         axios
           .get(urlFilmModificato)
           .then((risposta) => {

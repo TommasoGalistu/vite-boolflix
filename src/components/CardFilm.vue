@@ -23,7 +23,13 @@ export default {
       <h4>{{ titoloOrigin }}</h4>
       <h4>{{ lingua }}</h4>
       <span>{{ valutazione }} </span>
-      <i class="fa-regular fa-star"></i>
+      <div>
+        <font-awesome-icon :icon="['far', 'star']" />
+        <font-awesome-icon :icon="['far', 'star']" />
+        <font-awesome-icon :icon="['far', 'star']" />
+        <font-awesome-icon :icon="['far', 'star']" />
+        <font-awesome-icon :icon="['far', 'star']" />
+      </div>
     </div>
   </div>
 </template>
