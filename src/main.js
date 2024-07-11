@@ -4,11 +4,12 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 // Importa il componente FontAwesome per Vue
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-// Importa l'icona specifica che vuoi utilizzare
+// Importa le icone specifiche che vuoi utilizzare
 import { faStar as faRegularStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar as faSolidStar } from '@fortawesome/free-solid-svg-icons';
 
-// Aggiungi l'icona alla libreria
-library.add(faRegularStar);
+// Aggiungi le icone alla libreria
+library.add(faRegularStar, faSolidStar);
 
 import './style.css';
 

@@ -28,7 +28,7 @@ export default {
         <font-awesome-icon :icon="['far', 'star']" />
         <font-awesome-icon :icon="['far', 'star']" />
         <font-awesome-icon :icon="['far', 'star']" />
-        <font-awesome-icon :icon="['far', 'star']" />
+        <font-awesome-icon :icon="['fas', 'star']" />
       </div>
     </div>
   </div>

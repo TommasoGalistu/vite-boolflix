@@ -12,6 +12,7 @@
     "@fontsource-variable/open-sans": "^5.0.29",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "axios": "^1.7.2",
     "fontawesome-common-types": "^6.4.0",
