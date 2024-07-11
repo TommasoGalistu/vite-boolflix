@@ -26,6 +26,10 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  background-color: black;
+  h1 {
+    color: red;
+  }
   .containerInput {
   }
 }
