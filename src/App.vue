@@ -50,6 +50,8 @@ export default {
             store.isSearch = false;
             console.log("errore mio", error.message);
           });
+      } else {
+        store.isSearch = false;
       }
     },
   },
