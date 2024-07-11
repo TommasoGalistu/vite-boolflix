@@ -12,6 +12,7 @@ export default {
     titoloOrigin: String,
     lingua: Object,
     valutazione: Number,
+    src: String,
   },
   methods: {
     flagInsert() {
@@ -25,11 +26,9 @@ export default {
   <div class="card">
     <div class="contLocandina">
       <div class="contImg">
-        <img
-          src="http://image.tmdb.org/t/p/original//jKKTTRdSEcVx9Y0jcSDYNqd72h9.jpg"
-          alt=""
-        />
+        <img :src="`http://image.tmdb.org/t/p/original${src}`" alt="" />
       </div>
+      <h2>{{ titolo }}</h2>
     </div>
     <div class="textContent">
       <h2>{{ titolo }}</h2>
@@ -55,7 +54,7 @@ h3 {
 .card {
   background-color: grey;
   height: 30rem;
-  width: calc((100% / 5) - 0.2rem);
+  width: calc((100% / 4) - 0.2rem);
   // padding: 1rem;
   position: relative;
 
@@ -76,8 +75,19 @@ h3 {
       height: 100%;
       img {
         height: 100%;
+        width: 100%;
         object-fit: cover;
       }
+    }
+    h2 {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      color: black; /* Text color */
+      -webkit-text-stroke: 1px white; /* Border effect */
+      text-align: center;
     }
   }
   .textContent {

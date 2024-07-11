@@ -33,6 +33,7 @@ header {
   padding: 1rem;
   background-color: black;
   position: fixed;
+  z-index: 1000;
   width: 100%;
   h1 {
     color: red;
