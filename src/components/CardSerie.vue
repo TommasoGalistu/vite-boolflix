@@ -11,7 +11,7 @@ export default {
     titoloSerie: String,
     titoloOriginSerie: String,
     linguaSerie: String,
-    valutazioneSerie: String,
+    valutazioneSerie: Number,
   },
 };
 </script>

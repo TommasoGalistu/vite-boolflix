@@ -14,8 +14,13 @@ export default {
   <header>
     <h1>BoolFlix</h1>
     <div class="containerInput">
-      <input type="text" placeholder="Cerca un film" />
-      <button>Cerca</button>
+      <input
+        v-model="store.inputUtente"
+        type="text"
+        placeholder="Cerca un film"
+        @keyup.enter="$emit('searchInput', store.inputUtente)"
+      />
+      <button @click="$emit('searchInput', store.inputUtente)">Cerca</button>
     </div>
   </header>
 </template>

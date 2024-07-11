@@ -20,7 +20,9 @@ export default {
 <template>
   <div class="sfondo">
     <div class="container">
-      <h3 v-if="!store.isSearch">Scegli un film nella barra di ricerca</h3>
+      <div class="contFirstText" v-if="!store.isSearch">
+        <h3>Scegli un film nella barra di ricerca</h3>
+      </div>
       <div class="containerFigure" v-else>
         <h3>Film</h3>
         <div class="containerCard">
@@ -60,6 +62,9 @@ export default {
 
     h3 {
       font-size: 3rem;
+    }
+    .contFirstText {
+      height: calc(100vh - 5rem);
     }
     .containerFigure {
       .containerCard {

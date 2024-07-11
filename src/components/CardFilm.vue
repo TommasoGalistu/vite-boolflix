@@ -11,7 +11,7 @@ export default {
     titolo: String,
     titoloOrigin: String,
     lingua: String,
-    valutazione: String,
+    valutazione: Number,
   },
 };
 </script>
