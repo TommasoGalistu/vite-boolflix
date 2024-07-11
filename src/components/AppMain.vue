@@ -38,10 +38,10 @@ export default {
           <CardSerie
             v-for="serie in store.arraySerie"
             :key="serie.id"
-            :titolo="serie.name"
-            :titoloOrigin="serie.original_name"
-            :lingua="serie.original_languag"
-            :valutazione="serie.vote_average"
+            :titoloSerie="serie.name"
+            :titoloOriginSerie="serie.original_name"
+            :linguaSerie="serie.original_languag"
+            :valutazioneSerie="serie.vote_average"
           />
         </div>
       </div>

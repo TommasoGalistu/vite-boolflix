@@ -8,10 +8,10 @@ export default {
     };
   },
   props: {
-    titolo: String,
-    titoloOrigin: String,
-    lingua: String,
-    valutazione: String,
+    titoloSerie: String,
+    titoloOriginSerie: String,
+    linguaSerie: String,
+    valutazioneSerie: String,
   },
 };
 </script>
@@ -19,10 +19,10 @@ export default {
 <template>
   <div class="card">
     <div class="textContent">
-      <h2>{{ titolo }}</h2>
-      <h4>{{ titoloOrigin }}</h4>
-      <h4>{{ lingua }}</h4>
-      <span>{{ valutazione }} </span>
+      <h2>{{ titoloSerie }}</h2>
+      <h4>{{ titoloOriginSerie }}</h4>
+      <h4>{{ linguaSerie }}</h4>
+      <span>{{ valutazioneSerie }} </span>
       <i class="fa-regular fa-star"></i>
     </div>
   </div>
