@@ -22,5 +22,5 @@ export default {
   <AppMain />
 </template>
 
-<style>
+<style lang="scss">
 </style>

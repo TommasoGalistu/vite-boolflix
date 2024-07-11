@@ -23,5 +23,5 @@ export default {
   <CardSerie />
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>

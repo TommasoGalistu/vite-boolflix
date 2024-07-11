@@ -14,5 +14,5 @@ export default {
   <h1>card serie</h1>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>
