@@ -14,6 +14,32 @@ export default {
       store,
     };
   },
+  methods: {
+    flagInsert(lingua) {
+      let result;
+      switch (lingua) {
+        case "en":
+          result = {
+            src: "https://flagcdn.com/w40/um.png",
+            srcset: "https://flagcdn.com/w80/um.png 2x",
+            alt: "Stati Uniti d'America",
+          };
+          break;
+        case "it":
+          result = {
+            src: "https://flagcdn.com/w40/it.png",
+            srcset: "https://flagcdn.com/w80/it.png 2x",
+            alt: "Italia",
+          };
+          break;
+        default:
+          result = {
+            alt: `${lingua}`,
+          };
+      }
+      return result;
+    },
+  },
 };
 </script>
 
@@ -31,7 +57,7 @@ export default {
             :key="film.id"
             :titolo="film.title"
             :titoloOrigin="film.original_title"
-            :lingua="film.original_language"
+            :lingua="flagInsert(film.original_language)"
             :valutazione="film.vote_average"
           />
         </div>

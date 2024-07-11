@@ -10,8 +10,13 @@ export default {
   props: {
     titolo: String,
     titoloOrigin: String,
-    lingua: String,
+    lingua: Object,
     valutazione: Number,
+  },
+  methods: {
+    flagInsert() {
+      return ciao;
+    },
   },
 };
 </script>
@@ -21,8 +26,8 @@ export default {
     <div class="textContent">
       <h2>{{ titolo }}</h2>
       <h4>{{ titoloOrigin }}</h4>
-      <h4>{{ lingua }}</h4>
-      <span>{{ valutazione }} </span>
+      <img :src="lingua.src" :srcset="lingua.srcset" :alt="lingua.alt" />
+      <p>{{ valutazione }}</p>
       <div>
         <font-awesome-icon :icon="['far', 'star']" />
         <font-awesome-icon :icon="['far', 'star']" />
