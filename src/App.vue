@@ -16,15 +16,28 @@ export default {
     };
   },
   methods: {
-    requestApi() {
+    requestApiFilm() {
       axios
-        .get(store.urlRichiesta)
-        .then((risposta) => (store.arrayVideo = risposta.data.results))
+        .get(store.urlRichiestaFilm)
+        .then((risposta) => {
+          store.arrayFilm = risposta.data.results;
+          console.log("dati film: ", risposta.data.result);
+        })
+        .catch((error) => console.log("errore mio", error.message));
+    },
+    requestApiSerie() {
+      axios
+        .get(store.urlRichiestaSerie)
+        .then((risposta) => {
+          store.arraySerie = risposta.data.results;
+          console.log("dati serie tv ", risposta.data.results);
+        })
         .catch((error) => console.log("errore mio", error.message));
     },
   },
   mounted() {
-    this.requestApi();
+    this.requestApiFilm();
+    this.requestApiSerie();
   },
 };
 </script>
