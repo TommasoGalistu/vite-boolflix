@@ -7,6 +7,12 @@ export default {
       store,
     };
   },
+  props: {
+    titolo: String,
+    titoloOrigin: String,
+    lingua: String,
+    valutazione: String,
+  },
 };
 </script>
 
@@ -37,6 +43,7 @@ h3 {
   gap: 0.1rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 2rem;
   .card {
     background-color: grey;
     height: 30rem;

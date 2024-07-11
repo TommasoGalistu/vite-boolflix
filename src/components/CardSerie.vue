@@ -7,6 +7,12 @@ export default {
       store,
     };
   },
+  props: {
+    titolo: String,
+    titoloOrigin: String,
+    lingua: String,
+    valutazione: String,
+  },
 };
 </script>
 
