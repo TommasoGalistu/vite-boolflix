@@ -11,8 +11,22 @@ export default {
 </script>
 
 <template>
-  <h1>AppHeader</h1>
+  <header>
+    <h1>BoolFlix</h1>
+    <div class="containerInput">
+      <input type="text" placeholder="Cerca un film" />
+      <button>Cerca</button>
+    </div>
+  </header>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  .containerInput {
+  }
+}
 </style>
