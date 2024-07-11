@@ -31,6 +31,16 @@ header {
     color: red;
   }
   .containerInput {
+    input {
+      height: 2rem;
+      width: 15rem;
+      margin-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
+    button {
+      height: 2rem;
+      padding: 0 0.5rem;
+    }
   }
 }
 </style>
