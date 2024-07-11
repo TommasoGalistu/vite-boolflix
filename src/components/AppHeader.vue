@@ -27,6 +27,8 @@ header {
   justify-content: space-between;
   padding: 1rem;
   background-color: black;
+  position: fixed;
+  width: 100%;
   h1 {
     color: red;
   }

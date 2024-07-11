@@ -18,10 +18,29 @@ export default {
 </script>
 
 <template>
-  <h1>Main</h1>
-  <CardFilm />
-  <CardSerie />
+  <div class="sfondo">
+    <div class="container">
+      <h3 v-if="!store.isSearch">Scegli un film nella barra di ricerca</h3>
+      <div v-else>
+        <CardFilm />
+        <CardSerie />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
+.sfondo {
+  background-color: grey;
+  color: rgb(181, 181, 181);
+  .container {
+    width: 90%;
+    margin: auto;
+    padding-top: 5rem;
+
+    h3 {
+      font-size: 3rem;
+    }
+  }
+}
 </style>
