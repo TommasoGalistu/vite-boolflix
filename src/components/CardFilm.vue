@@ -10,7 +10,24 @@ export default {
   props: {
     info: Object,
   },
-  methods: {},
+  methods: {
+    numberOfStar(voto) {
+      let numeroStelle = Math.floor(voto / 2);
+      let arrStelle = [];
+
+      for (let i = 0; i < 5; i++) {
+        if (i < numeroStelle) {
+          // stelle piene
+          arrStelle.push(["fas", "star"]);
+        } else {
+          // stelle vuote
+          arrStelle.push(["far", "star"]);
+        }
+      }
+
+      return arrStelle;
+    },
+  },
   mounted() {
     console.log(this.info.lingua.src);
   },
@@ -18,11 +35,6 @@ export default {
 </script>
 
 <template>
-  <!-- // :titolo="film.title"
-//             :titoloOrigin="film.original_title"
-//             :lingua="flagInsert(film.original_language)"
-//             :valutazione="film.vote_average"
-//             :src="film.poster_path" -->
   <div v-if="info.tipo === 'film'" class="card">
     <div class="contLocandina">
       <div class="contImg">
@@ -40,21 +52,17 @@ export default {
         :srcset="info.lingua.srcset"
         :alt="info.lingua.alt"
       />
-      <p>{{ info.valore.vote_average }}</p>
+      <p>{{ `Voto medio ${Math.floor(info.valore.vote_average)}/10` }}</p>
       <div>
-        <font-awesome-icon :icon="['far', 'star']" />
-        <font-awesome-icon :icon="['far', 'star']" />
-        <font-awesome-icon :icon="['far', 'star']" />
-        <font-awesome-icon :icon="['far', 'star']" />
-        <font-awesome-icon :icon="['fas', 'star']" />
+        <font-awesome-icon
+          v-for="(icone, index) in numberOfStar(info.valore.vote_average)"
+          :key="index"
+          :icon="icone"
+        />
       </div>
     </div>
   </div>
-  <!-- // :titolo="serie.name"
-//             :titoloOrigin="serie.original_name"
-//             :lingua="flagInsert(serie.original_language)"
-//             :valutazione="serie.vote_average"
-//             :src="serie.poster_path" -->
+
   <div v-else-if="info.tipo === 'serie'" class="card">
     <div class="contLocandina">
       <div class="contImg">
