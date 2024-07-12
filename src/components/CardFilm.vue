@@ -27,6 +27,9 @@ export default {
 
       return arrStelle;
     },
+    isSimilar(titoloOriginale, titolo) {
+      return titoloOriginale === titolo ? false : true;
+    },
   },
   mounted() {
     console.log(this.info.lingua.src);
@@ -51,7 +54,7 @@ export default {
       <div class="textContent flip-card-back">
         <span><strong>Titolo: </strong>{{ info.valore.title }}</span>
 
-        <span
+        <span v-if="isSimilar(info.valore.original_title, info.valore.title)"
           ><strong>Titolo originale: </strong
           >{{ info.valore.original_title }}</span
         >
