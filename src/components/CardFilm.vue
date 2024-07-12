@@ -158,7 +158,7 @@ h3 {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-
+    overflow-y: auto;
     text-align: left;
     span {
       padding: 0.3rem;
