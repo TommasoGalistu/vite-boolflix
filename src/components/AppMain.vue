@@ -82,6 +82,14 @@ export default {
       return result;
     },
   },
+  computed: {
+    filmFiltred() {
+      return store.arrayFilm.filter((film) => film.poster_path);
+    },
+    serieFiltred() {
+      return store.arraySerie.filter((serie) => serie.poster_path);
+    },
+  },
 };
 </script>
 
@@ -95,7 +103,7 @@ export default {
         <h3 v-if="isEmptyFilm">Film</h3>
         <div v-if="isEmptyFilm" class="containerCard">
           <CardFilm
-            v-for="film in store.arrayFilm"
+            v-for="film in filmFiltred"
             :key="film.id"
             :info="{
               tipo: 'film',
@@ -107,7 +115,7 @@ export default {
         <h3 v-if="isEmptySeries">Telefilm</h3>
         <div v-if="isEmptySeries" class="containerCard">
           <CardFilm
-            v-for="serie in store.arraySerie"
+            v-for="serie in serieFiltred"
             :key="serie.id"
             :info="{
               tipo: 'serie',
