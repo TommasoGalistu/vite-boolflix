@@ -8,32 +8,71 @@ export default {
     };
   },
   props: {
-    titolo: String,
-    titoloOrigin: String,
-    lingua: Object,
-    valutazione: Number,
-    src: String,
+    info: Object,
   },
-  methods: {
-    flagInsert() {
-      return ciao;
-    },
+  methods: {},
+  mounted() {
+    console.log(this.info.lingua.src);
   },
 };
 </script>
 
 <template>
-  <div class="card">
+  <!-- // :titolo="film.title"
+//             :titoloOrigin="film.original_title"
+//             :lingua="flagInsert(film.original_language)"
+//             :valutazione="film.vote_average"
+//             :src="film.poster_path" -->
+  <div v-if="info.tipo === 'film'" class="card">
     <div class="contLocandina">
       <div class="contImg">
-        <img :src="`http://image.tmdb.org/t/p/original${src}`" alt="" />
+        <img
+          :src="`http://image.tmdb.org/t/p/original${info.valore.poster_path}`"
+          :alt="`Poster di '${info.valore.title}'`"
+        />
       </div>
     </div>
     <div class="textContent">
-      <h2>{{ titolo }}</h2>
-      <h4>{{ titoloOrigin }}</h4>
-      <img :src="lingua.src" :srcset="lingua.srcset" :alt="lingua.alt" />
-      <p>{{ valutazione }}</p>
+      <h2>{{ info.valore.title }}</h2>
+      <h4>{{ info.valore.original_title }}</h4>
+      <img
+        :src="info.lingua.src"
+        :srcset="info.lingua.srcset"
+        :alt="info.lingua.alt"
+      />
+      <p>{{ info.valore.vote_average }}</p>
+      <div>
+        <font-awesome-icon :icon="['far', 'star']" />
+        <font-awesome-icon :icon="['far', 'star']" />
+        <font-awesome-icon :icon="['far', 'star']" />
+        <font-awesome-icon :icon="['far', 'star']" />
+        <font-awesome-icon :icon="['fas', 'star']" />
+      </div>
+    </div>
+  </div>
+  <!-- // :titolo="serie.name"
+//             :titoloOrigin="serie.original_name"
+//             :lingua="flagInsert(serie.original_language)"
+//             :valutazione="serie.vote_average"
+//             :src="serie.poster_path" -->
+  <div v-else-if="info.tipo === 'serie'" class="card">
+    <div class="contLocandina">
+      <div class="contImg">
+        <img
+          :src="`http://image.tmdb.org/t/p/original${info.valore.poster_path}`"
+          :alt="`Poster di '${info.valore.name}'`"
+        />
+      </div>
+    </div>
+    <div class="textContent">
+      <h2>{{ info.valore.name }}</h2>
+      <h4>{{ info.valore.original_name }}</h4>
+      <img
+        :src="info.lingua.src"
+        :srcset="info.lingua.srcset"
+        :alt="info.lingua.alt"
+      />
+      <p>{{ info.valore.vote_average }}</p>
       <div>
         <font-awesome-icon :icon="['far', 'star']" />
         <font-awesome-icon :icon="['far', 'star']" />
@@ -89,5 +128,15 @@ h3 {
       padding: 0.5rem;
     }
   }
+}
+.containerCard {
+  background-color: black;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  gap: 0.1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 </style>

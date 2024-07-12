@@ -1,13 +1,11 @@
 <script>
 import CardFilm from "./CardFilm.vue";
-import CardSerie from "./CardSerie.vue";
 
 import { store } from "../store";
 export default {
   name: "AppMain",
   components: {
     CardFilm,
-    CardSerie,
   },
   data() {
     return {
@@ -15,6 +13,12 @@ export default {
     };
   },
   methods: {
+    isEmptyFilm() {
+      return store.arrayFilm.length > 0;
+    },
+    isEmptySeries() {
+      return store.arraySerie.length > 0;
+    },
     flagInsert(lingua) {
       let result;
       switch (lingua) {
@@ -31,6 +35,27 @@ export default {
             src: "https://flagcdn.com/w40/it.png",
             srcset: "https://flagcdn.com/w80/it.png 2x",
             alt: "Italia",
+          };
+          break;
+        case "es":
+          result = {
+            src: "https://flagcdn.com/w40/es.png",
+            srcset: "https://flagcdn.com/w80/es.png 2x",
+            alt: "Spagna",
+          };
+          break;
+        case "ja":
+          result = {
+            src: "https://flagcdn.com/w40/jp.png",
+            srcset: "https://flagcdn.com/w80/jp.png 2x",
+            alt: "Giappone",
+          };
+          break;
+        case "zh":
+          result = {
+            src: "https://flagcdn.com/w40/cn.png",
+            srcset: "https://flagcdn.com/w80/cn.png 2x",
+            alt: "Cina",
           };
           break;
         default:
@@ -51,29 +76,41 @@ export default {
         <h3>Scegli un film nella barra di ricerca</h3>
       </div>
       <div class="containerFigure" v-else>
-        <h3>Film</h3>
-        <div class="containerCard">
+        <h3 v-if="isEmptyFilm">Film</h3>
+        <div v-if="isEmptyFilm" class="containerCard">
           <CardFilm
             v-for="film in store.arrayFilm"
             :key="film.id"
-            :titolo="film.title"
-            :titoloOrigin="film.original_title"
-            :lingua="flagInsert(film.original_language)"
-            :valutazione="film.vote_average"
-            :src="film.poster_path"
+            :info="{
+              tipo: 'film',
+              valore: film,
+              lingua: flagInsert(film.original_language),
+            }"
           />
         </div>
-        <h3>Serie Tv</h3>
+        <h3 v-if="isEmptySeries">Telefilm</h3>
+        <div v-if="isEmptySeries" class="containerCard">
+          <CardFilm
+            v-for="serie in store.arraySerie"
+            :key="serie.id"
+            :info="{
+              tipo: 'serie',
+              valore: serie,
+              lingua: flagInsert(serie.original_language),
+            }"
+          />
+        </div>
+        <!-- <h3>Serie Tv</h3>
         <div class="containerCard">
           <CardSerie
             v-for="serie in store.arraySerie"
             :key="serie.id"
             :titoloSerie="serie.name"
             :titoloOriginSerie="serie.original_name"
-            :linguaSerie="serie.original_languag"
+            :linguaSerie="serie.original_language"
             :valutazioneSerie="serie.vote_average"
           />
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
