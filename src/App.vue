@@ -17,7 +17,6 @@ export default {
   },
   methods: {
     requestApi() {
-      console.log(store.inputUtente);
       if (store.inputUtente) {
         // variabili per modificare l'url
         let urlFilmModificato = store.urlRichiestaFilm;
@@ -31,7 +30,9 @@ export default {
           .get(urlFilmModificato)
           .then((risposta) => {
             store.arrayFilm = risposta.data.results;
+
             store.isSearch = true;
+
             // console.log("dati film: ", risposta.data.result);
           })
           .catch((error) => {

@@ -1,11 +1,11 @@
 <script>
-import CardFilm from "./CardFilm.vue";
+import CardFilmSerie from "./CardFilmSerie.vue";
 
 import { store } from "../store";
 export default {
   name: "AppMain",
   components: {
-    CardFilm,
+    CardFilmSerie,
   },
   data() {
     return {
@@ -109,7 +109,7 @@ export default {
       <div class="containerFigure" v-else>
         <h3 v-if="isEmptyFilm">Film</h3>
         <div v-if="isEmptyFilm" class="containerCard">
-          <CardFilm
+          <CardFilmSerie
             v-for="film in filmFiltred"
             :key="film.id"
             :info="{
@@ -121,7 +121,7 @@ export default {
         </div>
         <h3 v-if="isEmptySeries">Telefilm</h3>
         <div v-if="isEmptySeries" class="containerCard">
-          <CardFilm
+          <CardFilmSerie
             v-for="serie in serieFiltred"
             :key="serie.id"
             :info="{

@@ -1,7 +1,7 @@
 <script>
 import { store } from "../store";
 export default {
-  name: "CardFilm",
+  name: "CardFilmSerie",
   data() {
     return {
       store,
@@ -34,9 +34,8 @@ export default {
       return valore ? true : false;
     },
   },
-  mounted() {
-    console.log(this.info.lingua.src);
-  },
+  computed: {},
+  mounted() {},
 };
 </script>
 
@@ -62,7 +61,7 @@ export default {
           >{{ info.valore.original_title }}</span
         >
 
-        <div v-if="isEmpty(info.valore.vote_average)">
+        <div>
           <span class="voto"><strong>Voto: </strong></span>
           <font-awesome-icon
             class="stelle"
@@ -102,7 +101,7 @@ export default {
           ><strong>Titolo originale:</strong
           >{{ info.valore.original_name }}</span
         >
-        <div v-if="isEmpty(info.valore.vote_average)">
+        <div>
           <span class="voto"><strong>Voto: </strong></span>
           <font-awesome-icon
             class="stelle"
