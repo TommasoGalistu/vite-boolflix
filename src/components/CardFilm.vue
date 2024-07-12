@@ -30,6 +30,9 @@ export default {
     isSimilar(titoloOriginale, titolo) {
       return titoloOriginale === titolo ? false : true;
     },
+    isEmpty(valore) {
+      return valore ? true : false;
+    },
   },
   mounted() {
     console.log(this.info.lingua.src);
@@ -59,7 +62,7 @@ export default {
           >{{ info.valore.original_title }}</span
         >
 
-        <div>
+        <div v-if="isEmpty(info.valore.vote_average)">
           <span class="voto"><strong>Voto: </strong></span>
           <font-awesome-icon
             class="stelle"
@@ -68,8 +71,10 @@ export default {
             :icon="icone"
           />
         </div>
-        <span><strong>Overview: </strong>{{ info.valore.overview }}</span>
-        <div class="displayFlex">
+        <span v-if="isEmpty(info.valore.overview)"
+          ><strong>Overview: </strong>{{ info.valore.overview }}</span
+        >
+        <div v-if="isEmpty(info.lingua.alt)" class="displayFlex">
           <span>Lingua: </span>
           <img
             :src="info.lingua.src"
@@ -93,11 +98,11 @@ export default {
       </div>
       <div class="textContent flip-card-back">
         <span><strong>Titolo: </strong>{{ info.valore.name }}</span>
-        <span
+        <span v-if="isSimilar(info.valore.original_name, info.valore.name)"
           ><strong>Titolo originale:</strong
           >{{ info.valore.original_name }}</span
         >
-        <div>
+        <div v-if="isEmpty(info.valore.vote_average)">
           <span class="voto"><strong>Voto: </strong></span>
           <font-awesome-icon
             class="stelle"
@@ -106,8 +111,10 @@ export default {
             :icon="icone"
           />
         </div>
-        <span><strong>Overview: </strong>{{ info.valore.overview }}</span>
-        <div class="displayFlex">
+        <span v-if="isEmpty(info.valore.overview)"
+          ><strong>Overview: </strong>{{ info.valore.overview }}</span
+        >
+        <div v-if="isEmpty(info.lingua.alt)" class="displayFlex">
           <span>Lingua: </span>
           <img
             :src="info.lingua.src"
