@@ -57,9 +57,7 @@ export default {
     },
   },
 
-  mounted() {
-    this.requestApi();
-  },
+  mounted() {},
 };
 </script>
 
