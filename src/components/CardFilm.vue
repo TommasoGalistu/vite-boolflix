@@ -35,8 +35,10 @@ export default {
 </script>
 
 <template>
+  <!-- card dei film -->
   <div v-if="info.tipo === 'film'" class="card flip-card">
     <div class="flip-card-inner">
+      <!-- card visibile all'apertura -->
       <div class="contLocandina flip-card-front">
         <div class="contImg">
           <img
@@ -45,26 +47,37 @@ export default {
           />
         </div>
       </div>
+      <!-- card visibile all'hover con info -->
       <div class="textContent flip-card-back">
-        <h2>{{ info.valore.title }}</h2>
-        <h4>{{ info.valore.original_title }}</h4>
-        <img
-          :src="info.lingua.src"
-          :srcset="info.lingua.srcset"
-          :alt="info.lingua.alt"
-        />
-        <p>{{ `Voto medio ${Math.floor(info.valore.vote_average)}/10` }}</p>
+        <span><strong>Titolo: </strong>{{ info.valore.title }}</span>
+
+        <span
+          ><strong>Titolo originale: </strong
+          >{{ info.valore.original_title }}</span
+        >
+
         <div>
+          <span class="voto"><strong>Voto: </strong></span>
           <font-awesome-icon
+            class="stelle"
             v-for="(icone, index) in numberOfStar(info.valore.vote_average)"
             :key="index"
             :icon="icone"
           />
         </div>
+        <span><strong>Overview: </strong>{{ info.valore.overview }}</span>
+        <div class="displayFlex">
+          <span>Lingua: </span>
+          <img
+            :src="info.lingua.src"
+            :srcset="info.lingua.srcset"
+            :alt="info.lingua.alt"
+          />
+        </div>
       </div>
     </div>
   </div>
-
+  <!-- card delle serie -->
   <div v-else-if="info.tipo === 'serie'" class="card flip-card">
     <div class="flip-card-inner">
       <div class="contLocandina flip-card-front">
@@ -76,19 +89,27 @@ export default {
         </div>
       </div>
       <div class="textContent flip-card-back">
-        <h2>{{ info.valore.name }}</h2>
-        <h4>{{ info.valore.original_name }}</h4>
-        <img
-          :src="info.lingua.src"
-          :srcset="info.lingua.srcset"
-          :alt="info.lingua.alt"
-        />
-        <p>{{ `Voto medio ${Math.floor(info.valore.vote_average)}/10` }}</p>
+        <span><strong>Titolo: </strong>{{ info.valore.name }}</span>
+        <span
+          ><strong>Titolo originale:</strong
+          >{{ info.valore.original_name }}</span
+        >
         <div>
+          <span class="voto"><strong>Voto: </strong></span>
           <font-awesome-icon
+            class="stelle"
             v-for="(icone, index) in numberOfStar(info.valore.vote_average)"
             :key="index"
             :icon="icone"
+          />
+        </div>
+        <span><strong>Overview: </strong>{{ info.valore.overview }}</span>
+        <div class="displayFlex">
+          <span>Lingua: </span>
+          <img
+            :src="info.lingua.src"
+            :srcset="info.lingua.srcset"
+            :alt="info.lingua.alt"
           />
         </div>
       </div>
@@ -127,12 +148,25 @@ h3 {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+
+    text-align: left;
+    span {
+      padding: 0.3rem;
+      display: block;
+    }
+    span.voto {
+      display: inline;
+    }
+    .displayFlex {
+      display: flex;
+      gap: 1rem;
+    }
+    .stelle {
+      color: orange;
+    }
   }
 
   .contLocandina {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transform: rotateY(0deg);
     background-color: #bbb;
     color: black;
@@ -140,12 +174,9 @@ h3 {
 
   .textContent {
     transform: rotateY(180deg);
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #2980b9;
+    background-color: black;
+    border: 1px solid white;
     color: white;
     padding: 1rem;
   }
@@ -158,14 +189,6 @@ h3 {
       width: 100%;
       object-fit: cover;
     }
-  }
-
-  h2 {
-    padding: 1rem;
-  }
-
-  h4 {
-    padding: 0.5rem;
   }
 }
 
