@@ -23,6 +23,13 @@ export default {
       let result;
       switch (lingua) {
         // https://www.bandiere-mondo.it/italia/scarica/icone
+        case "ko":
+          result = {
+            src: "https://flagcdn.com/w40/kp.png",
+            srcset: "https://flagcdn.com/w80/kp.png 2x",
+            alt: "Corea del nord",
+          };
+          break;
         case "nl":
           result = {
             src: "https://flagcdn.com/w40/nl.png",
