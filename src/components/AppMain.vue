@@ -23,6 +23,20 @@ export default {
       let result;
       switch (lingua) {
         // https://www.bandiere-mondo.it/italia/scarica/icone
+        case "nl":
+          result = {
+            src: "https://flagcdn.com/w40/nl.png",
+            srcset: "https://flagcdn.com/w80/nl.png 2x",
+            alt: "Olanda",
+          };
+          break;
+        case "de":
+          result = {
+            src: "https://flagcdn.com/w40/de.png",
+            srcset: "https://flagcdn.com/w80/de.png 2x",
+            alt: "Germania",
+          };
+          break;
         case "en":
           result = {
             src: "https://flagcdn.com/w40/um.png",
@@ -60,7 +74,9 @@ export default {
           break;
         default:
           result = {
-            alt: `${lingua}`,
+            src: `https://flagcdn.com/w40/${lingua}.png`,
+            srcset: `https://flagcdn.com/w80/${lingua}.png 2x`,
+            alt: `Bandiera ${lingua}`,
           };
       }
       return result;
