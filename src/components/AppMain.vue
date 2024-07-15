@@ -136,26 +136,17 @@ export default {
             }"
           />
         </div>
-        <!-- <h3>Serie Tv</h3>
-        <div class="containerCard">
-          <CardSerie
-            v-for="serie in store.arraySerie"
-            :key="serie.id"
-            :titoloSerie="serie.name"
-            :titoloOriginSerie="serie.original_name"
-            :linguaSerie="serie.original_language"
-            :valutazioneSerie="serie.vote_average"
-          />
-        </div> -->
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+@import "../style/partial/variable.scss";
+
 .sfondo {
-  background-color: grey;
-  color: rgb(181, 181, 181);
+  background-color: $colorMain;
+  color: $colorTextMain;
   .container {
     width: 90%;
     margin: auto;

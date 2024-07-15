@@ -11,7 +11,7 @@ import { faStar as faSolidStar } from '@fortawesome/free-solid-svg-icons';
 // Aggiungi le icone alla libreria
 library.add(faRegularStar, faSolidStar);
 
-import './style.css';
+
 
 import { createApp } from 'vue';
 import App from './App.vue';

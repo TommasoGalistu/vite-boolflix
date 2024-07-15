@@ -67,4 +67,5 @@ export default {
 </template>
 
 <style lang="scss">
+@import "./style/general.scss";
 </style>

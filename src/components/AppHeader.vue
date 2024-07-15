@@ -18,25 +18,26 @@ export default {
         v-model="store.inputUtente"
         type="text"
         placeholder="Cerca un film"
-        @keyup.enter="$emit('searchInput', store.inputUtente)"
+        @keyup.enter="$emit('searchInput')"
       />
-      <button @click="$emit('searchInput', store.inputUtente)">Cerca</button>
+      <button @click="$emit('searchInput')">Cerca</button>
     </div>
   </header>
 </template>
 
 <style lang="scss" scoped>
+@import "../style/partial/variable.scss";
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background-color: black;
+  background-color: $colorHeader;
   position: fixed;
   z-index: 1000;
   width: 100%;
   h1 {
-    color: red;
+    color: $colorTextHeader;
   }
   .containerInput {
     input {

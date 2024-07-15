@@ -1,12 +1,7 @@
 <script>
-import { store } from "../store";
 export default {
   name: "CardFilmSerie",
-  data() {
-    return {
-      store,
-    };
-  },
+
   props: {
     info: Object,
   },
